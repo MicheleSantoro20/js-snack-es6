@@ -42,5 +42,45 @@ bici.forEach (bici => {
     if (bici.peso ==  risultato) {
         console.log (`La bici ${bici.nome} pesa ${bici.peso} ed è quella che tra tutte le biciclette elencate pesa meno`)
     }
+});
+
+
+//Snack 2
+
+const squadre = [
+    {
+        nome: 'Sampdoria',
+        falli: 0,
+        puntiFatti: 0
+    },
+    {
+        nome: 'Milan',
+        falli: 0,
+        puntiFatti: 0,
+    },
+    {
+        nome: 'Siena',
+        falli: 0,
+        puntiFatti: 0,    
+    }
+];
+
+const squadreAggiornate = []
+
+squadre.forEach(element => {
+    squadre.falli = generateRandomNumber (1, 25);
+    squadre.puntiFatti = generateRandomNumber (1, 10);
+
+    const {nome, falli, puntiFatti} = squadre;
+    squadreAggiornate.push({nome, falli, puntiFatti});
 })
+
+console.log(squadreAggiornate)
+
+function generateRandomNumber(min, max) {
+    const number = Math.floor(Math.random() * (max - min +1)) + min;
+    return number;
+}
+
+
 
